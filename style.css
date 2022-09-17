@@ -1,4 +1,6 @@
-* {
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Roboto&display=swap');
+
+*, ::after, ::before {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -6,10 +8,13 @@
 
 :root {
     --cell-width: 150px;
+    --symbol-height: calc(var(--cell-width)*0.9);
+    --green: rgb(26, 255, 0);
 }
 
 body {
     background-color: darkslategrey;
+    font-family: 'Roboto', sans-serif;
 }
 
 .container {
@@ -23,10 +28,15 @@ body {
 }
 
 .square {
-    color: rgb(26, 255, 0);
+    color: var(--green);
     width: var(--cell-width);
     height: var(--cell-width);
-    border: solid 3px rgb(26, 255, 0);
+    border: solid 3px  var(--green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-size: var(--symbol-height);
 }
 
 .square:first-child,
@@ -52,3 +62,38 @@ body {
 .square:nth-child(9) {
     border-right: none;
 }
+
+.box {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.x {
+    position: absolute;
+    height: var(--symbol-height);
+    width: calc(var(--symbol-height)*0.075);
+    background-color: var(--green);
+}
+
+.x1 {
+    rotate: 45deg;
+}
+.x2 {
+    rotate: -45deg;
+}
+
+.circle {
+    width: calc(var(--symbol-height)*0.825);
+    height: calc(var(--symbol-height)*0.825);
+    border: solid calc(var(--symbol-height)*0.075) var(--green);
+    border-radius: 50%;
+}
+
+.test {
+    height: 100px;
+    width: 100px;
+    background-color: aqua;
+}
+
