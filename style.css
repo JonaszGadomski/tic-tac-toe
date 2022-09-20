@@ -15,15 +15,36 @@
 body {
     background-color: darkslategrey;
     font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bigContainer {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container {
-    width: 100vw;
-    height: 100vh;
-    display: grid;
+    width: 450px;
+    height: 450px;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-content: center;
-    grid-template-columns: repeat(3, auto);
+    position: relative;
+}
+
+.deletion {
+    width: 6px;
+    height: 450px;
+    background-color: red;
+    position: absolute;
+    visibility: hidden;
     
 }
 
@@ -37,6 +58,7 @@ body {
     justify-content: center;
     position: relative;
     font-size: var(--symbol-height);
+    cursor: pointer;
 }
 
 .square:first-child,
@@ -96,4 +118,6 @@ body {
     width: 100px;
     background-color: aqua;
 }
+
+
 
