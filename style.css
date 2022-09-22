@@ -15,6 +15,15 @@
 body {
     background-color: darkslategrey;
     font-family: 'Roboto', sans-serif;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+header {
+    width: 80%;
+    height: 200px;
+    margin: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,7 +32,6 @@ body {
 .bigContainer {
     position: relative;
     width: 100vw;
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
