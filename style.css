@@ -15,9 +15,7 @@
 body {
     background-color: darkslategrey;
     font-family: 'Roboto', sans-serif;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
+    color: var(--green);
 }
 
 header {
@@ -73,24 +71,28 @@ header {
 .square:nth-child(2),
 .square:nth-child(3) {
     border-top: none;
+    box-shadow: none;
 }
 
 .square:first-child,
 .square:nth-child(4),
 .square:nth-child(7) {
     border-left: none;
+    box-shadow: none;
 }
 
 .square:nth-child(7),
 .square:nth-child(8),
 .square:nth-child(9) {
     border-bottom: none;
+    box-shadow: none;
 }
 
 .square:nth-child(3),
 .square:nth-child(6),
 .square:nth-child(9) {
     border-right: none;
+    box-shadow: none;
 }
 
 .box {
@@ -105,6 +107,7 @@ header {
     height: var(--symbol-height);
     width: calc(var(--symbol-height)*0.075);
     background-color: var(--green);
+    box-shadow:  0 0 3px var(--green), 0 0 6px yellow;
 }
 
 .x1 {
@@ -119,13 +122,15 @@ header {
     height: calc(var(--symbol-height)*0.825);
     border: solid calc(var(--symbol-height)*0.075) var(--green);
     border-radius: 50%;
+    box-shadow:  0 0 3px var(--green), 0 0 6px yellow;
 }
 
 .test {
-    height: 100px;
-    width: 100px;
-    background-color: aqua;
+    font-size: 50px;
+    font-weight: 800;
+    text-shadow: 0 0 3px var(--green), 0 0 6px yellow;
 }
+
 
 
 

@@ -6,25 +6,27 @@ const circle = '<div class="box" id="circle"><div class="circle"></div></div>';
 const deletion = document.getElementById('deletion');
 
 let full = 0;
+let xNumber = 0;
+let circleNumber = 0;
+
 const emptyCells = ["0", "1", "2", "3", "4", "5", "6", "7", "8"];
 
 squares.forEach(cell => {
     cell.addEventListener('click',  () => {
         playerMark(cell);
-
     })
 })
 
 function playerMark(cell) {
     if (cell.innerHTML != circle && deletion.style.visibility != "visible") {
         cell.innerHTML = x;
+        xNumber ++;
         checkForWin();
-        full ++;
         var c = cell.id;
         var d = emptyCells.indexOf(c);
         if (d >=0 && deletion.style.visibility != "visible") {
             emptyCells.splice(d, 1);
-            computerMark();
+            setTimeout(computerMark, 150);
         }
         else return
     }
@@ -36,18 +38,19 @@ function computerMark() {
     squares[f].innerHTML = circle;
     var g = squares[f].id;
     var h = emptyCells.indexOf(g);
-/*     if (h >=0) { */
     emptyCells.splice(h,1);
+    circleNumber ++;
     checkForWin();
-/*     }
-    else return */
-    full ++;
 }
 
 function win() {
-    test.innerHTML = test.innerHTML + "win";
     deletion.style.visibility = "visible";
-
+    if (xNumber > circleNumber) {
+        test.innerHTML = test.innerHTML + "X win the game";
+    }
+    else {
+        test.innerHTML = test.innerHTML + "Circle win the game";
+    }
 }
 
 
@@ -93,5 +96,8 @@ function checkForWin() {
         squares[2].innerHTML == circle && squares[4].innerHTML == circle && squares[6].innerHTML == circle) {
         win(); 
         deletion.style.rotate = "45deg";
+    }
+    else if (deletion.style.visibility != "visible" && xNumber == 5) {
+        test.innerHTML = test.innerHTML + "It is a DRAW!";
     }
 }
